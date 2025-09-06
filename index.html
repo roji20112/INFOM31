@@ -91,7 +91,7 @@
 <body>
   <div class="login-container">
     <h2> M31
- M31 تسجيل الدخول</h2>
+تسجيل الدخول</h2>
     <form onsubmit="return login(event)">
       <div class="input-group">
         <input type="text" id="username" placeholder="اسم المستخدم" required>
@@ -130,4 +130,121 @@
     });
   </script>
 </body>
+</html>
+
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>حساب إنستغرام @m_roji_31</title>
+    <meta name="description" content="صفحة بسيطة تعرض حساب إنستغرام @m_roji_31 مع شعار وخيارات نسخ وزيارة الحساب." />
+    <style>
+      :root {
+        --bg: #0f0f12;
+        --card: #15161a;
+        --text: #f5f7fb;
+        --muted: #aab1c2;
+        --accent1: #f58529; /* Instagram gradient colors */
+        --accent2: #dd2a7b;
+        --accent3: #8134af;
+        --accent4: #515bd4;
+        --ring: rgba(221, 42, 123, .35);
+      }
+      * { box-sizing: border-box; }
+      html, body { height: 100%; }
+      body {
+        margin: 0;
+        background: radial-gradient(1200px 800px at 70% -10%, rgba(221,42,123,.08), transparent 60%),
+                    radial-gradient(1000px 700px at -10% 110%, rgba(81,91,212,.08), transparent 60%),
+                    var(--bg);
+        color: var(--text);
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Kufi Arabic", "Noto Sans Arabic", Tahoma, sans-serif;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+      }
+      .card {
+        width: min(720px, 95vw);
+        background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+        border: 1px solid rgba(255,255,255,.09);
+        border-radius: 24px;
+        padding: 28px;
+        box-shadow: 0 20px 60px rgba(0,0,0,.4);
+        backdrop-filter: blur(6px);
+      }
+      .row { display: flex; align-items: center; gap: 18px; }
+      .logoWrap {
+        width: 88px; height: 88px; flex: 0 0 88px;
+        display: grid; place-items: center;
+        border-radius: 22px;
+        background: conic-gradient(from 180deg, var(--accent1), var(--accent2), var(--accent3), var(--accent4), var(--accent1));
+        box-shadow: 0 10px 30px var(--ring);
+        position: relative;
+      }
+      .logoInner {
+        width: 78px; height: 78px; border-radius: 18px; background: #111217; display: grid; place-items: center;
+      }
+      .title {
+        margin: 0 0 6px 0; font-size: clamp(24px, 4vw, 34px); font-weight: 800; letter-spacing: .2px;
+      }
+      .subtitle { margin: 0; color: var(--muted); font-size: clamp(14px, 2.2vw, 16px); }
+      .handle {
+        display: inline-flex; align-items: center; gap: 10px; margin-top: 14px;
+        font-size: clamp(20px, 3vw, 24px); font-weight: 700; padding: 10px 14px; border-radius: 14px;
+        background: #101218; border: 1px solid rgba(255,255,255,.08);
+      }
+      .btns { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 12px; }
+      .btn {
+        appearance: none; border: 0; cursor: pointer; border-radius: 14px; padding: 12px 16px; font-weight: 700;
+        background: linear-gradient(135deg, var(--accent4), var(--accent2)); color: white;
+        box-shadow: 0 10px 24px var(--ring);
+      }
+      .btn.secondary { background: #1a1d24; color: var(--text); border: 1px solid rgba(255,255,255,.08); box-shadow: none; }
+      .footer { margin-top: 26px; color: var(--muted); font-size: 13px; }
+      .spacer { flex: 1; }
+      .igSVG { width: 44px; height: 44px; }
+      @media (max-width: 520px){ .row { flex-direction: column; align-items: stretch; text-align: center; } .spacer{ display:none; } .logoWrap{ margin-inline: auto; } .btns{ justify-content: center; } }
+    </style>
+  </head>
+  <body>
+    <main class="card" role="main" aria-labelledby="title">
+      <div class="row">
+        <div class="logoWrap" aria-hidden="true">
+          <div class="logoInner">
+            <!-- Instagram glyph as SVG -->
+            <svg class="igSVG" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5zM18 6.25a1.25 1.25 0 1 1-1.25 1.25A1.25 1.25 0 0 1 18 6.25z" fill="currentColor"/>
+            </svg>
+          </div>
+        </div>
+
+        <div>
+          <h1 id="title" class="title">تابعني على إنستغرام</h1>
+          <p class="subtitle">هذا هو حسابي الرسمي. اضغط للزيارة أو انسخ الاسم.</p>
+          <div class="handle" id="handle">@m_roji_31</div>
+          <div class="btns">
+            <a class="btn" id="visitBtn" href="https://instagram.com/m_roji_31" target="_blank" rel="noopener" aria-label="زيارة حساب إنستغرام @m_roji_31">زورني على إنستغرام</a>
+            <button class="btn secondary" id="copyBtn" aria-label="نسخ اسم المستخدم">نسخ الاسم</button>
+          </div>
+        </div>
+        <div class="spacer"></div>
+      </div>
+      <p class="footer">يمكنك تعديل الاسم أو الألوان بسهولة داخل الملف.</p>
+    </main>
+
+    <script>
+      // نسخ اسم المستخدم للحافظة
+      const copyBtn = document.getElementById('copyBtn');
+      const handleEl = document.getElementById('handle');
+      copyBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(handleEl.textContent.trim());
+          copyBtn.textContent = 'تم النسخ ✔';
+          setTimeout(() => (copyBtn.textContent = 'نسخ الاسم'), 1600);
+        } catch (e) {
+          alert('تعذّر النسخ تلقائيًا — انسخ يدويًا: ' + handleEl.textContent.trim());
+        }
+      });
+    </script>
+  </body>
 </html>
