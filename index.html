@@ -164,59 +164,69 @@
         padding: 16px;
       }
       .card {
-        width: min(560px, 90vw);
+        width: min(460px, 92vw);
         background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
         border: 1px solid rgba(255,255,255,.09);
-        border-radius: 20px;
-        padding: 20px;
-        box-shadow: 0 12px 36px rgba(0,0,0,.35);
+        border-radius: 18px;
+        padding: 16px;
+        box-shadow: 0 10px 28px rgba(0,0,0,.35);
         backdrop-filter: blur(6px);
         position: relative;
       }
-      .floatingLogo {
+      .topIcons {
         position: absolute;
-        top: 12px; right: 12px;
-        width: 48px; height: 48px;
+        top: 10px; right: 10px;
+        display: flex; gap: 8px;
+      }
+      .iconBox {
+        width: 36px; height: 36px;
         display: grid; place-items: center;
-        border-radius: 14px;
-        background: conic-gradient(from 180deg, var(--accent1), var(--accent2), var(--accent3), var(--accent4), var(--accent1));
-        box-shadow: 0 6px 20px var(--ring);
+        border-radius: 10px;
+        background: #1a1d24;
+        box-shadow: 0 4px 12px rgba(0,0,0,.3);
         animation: float 3s ease-in-out infinite;
       }
-      .floatingLogo svg { width: 28px; height: 28px; color: white; }
+      .iconBox svg { width: 20px; height: 20px; color: white; }
       @keyframes float {
         0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-6px); }
+        50% { transform: translateY(-4px); }
       }
-      .row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
-      .section { flex: 1 1 100%; margin-top: 16px; }
-      .title { margin: 0 0 6px 0; font-size: clamp(20px, 3.5vw, 28px); font-weight: 800; }
-      .subtitle { margin: 0; color: var(--muted); font-size: clamp(13px, 2vw, 15px); }
+      .section { margin-top: 60px; }
+      .title { margin: 0 0 6px 0; font-size: clamp(18px, 3vw, 22px); font-weight: 800; }
+      .subtitle { margin: 0; color: var(--muted); font-size: clamp(12px, 2vw, 14px); }
       .handle {
-        display: inline-flex; align-items: center; gap: 8px; margin-top: 12px;
-        font-size: clamp(16px, 2.5vw, 20px); font-weight: 700; padding: 8px 12px; border-radius: 12px;
+        display: inline-flex; align-items: center; gap: 6px; margin-top: 10px;
+        font-size: clamp(14px, 2vw, 18px); font-weight: 700; padding: 6px 10px; border-radius: 10px;
         background: #101218; border: 1px solid rgba(255,255,255,.08);
       }
-      .btns { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 10px; }
+      .btns { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
       .btn {
-        appearance: none; border: 0; cursor: pointer; border-radius: 12px; padding: 8px 12px; font-weight: 700;
+        appearance: none; border: 0; cursor: pointer; border-radius: 10px; padding: 8px 10px; font-weight: 700;
         background: linear-gradient(135deg, var(--accent4), var(--accent2)); color: white;
-        box-shadow: 0 8px 18px var(--ring);
-        font-size: 14px;
+        box-shadow: 0 6px 14px var(--ring);
+        font-size: 13px;
       }
       .btn.secondary { background: #1a1d24; color: var(--text); border: 1px solid rgba(255,255,255,.08); box-shadow: none; }
-      .btn.telegram { background: var(--telegram); color: white; box-shadow: 0 6px 16px rgba(34,158,217,.4); }
-      .footer { margin-top: 20px; color: var(--muted); font-size: 12px; }
-      .igSVG, .tgSVG { width: 32px; height: 32px; }
+      .btn.telegram { background: var(--telegram); color: white; box-shadow: 0 4px 12px rgba(34,158,217,.4); }
+      .footer { margin-top: 16px; color: var(--muted); font-size: 11px; }
     </style>
   </head>
   <body>
     <main class="card" role="main" aria-labelledby="title">
-      <!-- شعار إنستغرام العائم -->
-      <div class="floatingLogo" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="currentColor">
-          <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5zM18 6.25a1.25 1.25 0 1 1-1.25 1.25A1.25 1.25 0 0 1 18 6.25z"/>
-        </svg>
+      <!-- الأيقونات أعلى اليمين -->
+      <div class="topIcons">
+        <div class="iconBox">
+          <!-- Instagram -->
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5zM18 6.25a1.25 1.25 0 1 1-1.25 1.25A1.25 1.25 0 0 1 18 6.25z"/>
+          </svg>
+        </div>
+        <div class="iconBox" style="background: var(--telegram); animation-delay: 1s;">
+          <!-- Telegram -->
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M9.78 14.88l-.39 3.93c.56 0 .8-.24 1.09-.53l2.62-2.5 5.43 3.96c1 .55 1.72.26 1.98-.92l3.59-16.82h-.01c.32-1.5-.54-2.08-1.53-1.72L1.52 9.25c-1.47.57-1.46 1.39-.25 1.77l4.35 1.36 10.1-6.37c.48-.3.91-.13.55.17"/>
+          </svg>
+        </div>
       </div>
 
       <div class="section">
@@ -270,6 +280,3 @@
     </script>
   </body>
 </html>
-
-</html>
-
