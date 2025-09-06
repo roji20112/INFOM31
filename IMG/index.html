@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تسجيل الدخول</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(135deg,#000000,#1a0000,#000000);
+      margin: 0;
+    }
+    .login-container {
+      background: #111;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(255,0,0,0.25);
+      width: 300px;
+      text-align: center;
+      border: 1px solid #330000;
+    }
+    h2 {
+      margin-bottom: 1rem;
+      font-weight: 600;
+      color: #ff3333;
+      font-size: 18px;
+    }
+    .input-group {
+      position: relative;
+      margin-bottom: 0.8rem;
+    }
+    .input-group input {
+      width: 100%;
+      height: 34px;
+      padding: 5px 32px 5px 8px;
+      border: 1px solid #333;
+      border-radius: 6px;
+      outline: none;
+      background: #1c1c1c;
+      color: #fff;
+      font-size: 13px;
+      box-sizing: border-box;
+    }
+    .input-group input:focus {
+      border-color: #ff3333;
+      box-shadow: 0 0 5px rgba(255,0,0,0.4);
+    }
+    .input-group i {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #888;
+      font-size: 13px;
+      pointer-events: none;
+    }
+    .btn {
+      width: 100%;
+      padding: 9px;
+      background: #cc0000;
+      border: none;
+      border-radius: 6px;
+      color: #fff;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .btn:hover {
+      background: #ff0000;
+      box-shadow: 0 0 8px rgba(255,0,0,0.4);
+    }
+    .error-message {
+      margin-top: 8px;
+      color: #ff5555;
+      font-size: 12px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2> M31
+تسجيل الدخول</h2>
+    <form onsubmit="return login(event)">
+      <div class="input-group">
+        <input type="text" id="username" placeholder="اسم المستخدم" required>
+        <i class="fa fa-user"></i>
+      </div>
+      <div class="input-group">
+        <input type="password" id="password" placeholder="كلمة المرور" required>
+        <i class="fa fa-lock"></i>
+      </div>
+      <button type="submit" class="btn">
+        دخول <i class="fa fa-arrow-right"></i>
+      </button>
+      <div id="error" class="error-message">❌ اسم المستخدم أو كلمة المرور غير صحيحة</div>
+    </form>
+  </div>
+
+  <script>
+    function login(e) {
+      e.preventDefault();
+      const user = document.getElementById("username").value.trim();
+      const pass = document.getElementById("password").value.trim();
+      const errorBox = document.getElementById("error");
+
+      if (user === "M31ROJI" && pass === "INFOS") {
+        window.location.href = "player.html";
+      } else {
+        errorBox.style.display = "block";
+      }
+    }
+
+    // إخفاء رسالة الخطأ عند التعديل على أي حقل
+    document.querySelectorAll("#username, #password").forEach(input => {
+      input.addEventListener("input", () => {
+        document.getElementById("error").style.display = "none";
+      });
+    });
+  </script>
+</body>
+</html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>حساباتي @m_roji_31 و @M31_ROJI</title>
+    <meta name="description" content="صفحة بسيطة تعرض حساب إنستغرام @m_roji_31 وحساب تلغرام @M31_ROJI مع شعارات وخيارات نسخ وزيارة الحسابات." />
+    <style>
+      :root {
+        --bg: #0f0f12;
+        --card: #15161a;
+        --text: #f5f7fb;
+        --muted: #aab1c2;
+        --accent1: #f58529;
+        --accent2: #dd2a7b;
+        --accent3: #8134af;
+        --accent4: #515bd4;
+        --ring: rgba(221, 42, 123, .35);
+        --telegram: #229ED9;
+      }
+      * { box-sizing: border-box; }
+      html, body { height: 100%; }
+      body {
+        margin: 0;
+        background: radial-gradient(1200px 800px at 70% -10%, rgba(221,42,123,.08), transparent 60%),
+                    radial-gradient(1000px 700px at -10% 110%, rgba(81,91,212,.08), transparent 60%),
+                    var(--bg);
+        color: var(--text);
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Kufi Arabic", "Noto Sans Arabic", Tahoma, sans-serif;
+        display: grid;
+        place-items: center;
+        padding: 16px;
+      }
+      .card {
+        width: min(560px, 90vw);
+        background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+        border: 1px solid rgba(255,255,255,.09);
+        border-radius: 20px;
+        padding: 20px;
+        box-shadow: 0 12px 36px rgba(0,0,0,.35);
+        backdrop-filter: blur(6px);
+        position: relative;
+      }
+      .floatingLogo {
+        position: absolute;
+        top: 12px; right: 12px;
+        width: 48px; height: 48px;
+        display: grid; place-items: center;
+        border-radius: 14px;
+        background: conic-gradient(from 180deg, var(--accent1), var(--accent2), var(--accent3), var(--accent4), var(--accent1));
+        box-shadow: 0 6px 20px var(--ring);
+        animation: float 3s ease-in-out infinite;
+      }
+      .floatingLogo svg { width: 28px; height: 28px; color: white; }
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-6px); }
+      }
+      .row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+      .section { flex: 1 1 100%; margin-top: 16px; }
+      .title { margin: 0 0 6px 0; font-size: clamp(20px, 3.5vw, 28px); font-weight: 800; }
+      .subtitle { margin: 0; color: var(--muted); font-size: clamp(13px, 2vw, 15px); }
+      .handle {
+        display: inline-flex; align-items: center; gap: 8px; margin-top: 12px;
+        font-size: clamp(16px, 2.5vw, 20px); font-weight: 700; padding: 8px 12px; border-radius: 12px;
+        background: #101218; border: 1px solid rgba(255,255,255,.08);
+      }
+      .btns { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 10px; }
+      .btn {
+        appearance: none; border: 0; cursor: pointer; border-radius: 12px; padding: 8px 12px; font-weight: 700;
+        background: linear-gradient(135deg, var(--accent4), var(--accent2)); color: white;
+        box-shadow: 0 8px 18px var(--ring);
+        font-size: 14px;
+      }
+      .btn.secondary { background: #1a1d24; color: var(--text); border: 1px solid rgba(255,255,255,.08); box-shadow: none; }
+      .btn.telegram { background: var(--telegram); color: white; box-shadow: 0 6px 16px rgba(34,158,217,.4); }
+      .footer { margin-top: 20px; color: var(--muted); font-size: 12px; }
+      .igSVG, .tgSVG { width: 32px; height: 32px; }
+    </style>
+  </head>
+  <body>
+    <main class="card" role="main" aria-labelledby="title">
+      <!-- شعار إنستغرام العائم -->
+      <div class="floatingLogo" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5zM18 6.25a1.25 1.25 0 1 1-1.25 1.25A1.25 1.25 0 0 1 18 6.25z"/>
+        </svg>
+      </div>
+
+      <div class="section">
+        <h1 id="title" class="title">تابعني على إنستغرام</h1>
+        <p class="subtitle">هذا هو حسابي الرسمي على إنستغرام.</p>
+        <div class="handle" id="handle">@m_roji_31</div>
+        <div class="btns">
+          <a class="btn" id="visitBtn" href="https://instagram.com/m_roji_31" target="_blank" rel="noopener">زورني على إنستغرام</a>
+          <button class="btn secondary" id="copyBtn">نسخ الاسم</button>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="title">تابعني على تلغرام</h2>
+        <p class="subtitle">هذا هو حسابي على تلغرام.</p>
+        <div class="handle" id="handle2">@M31_ROJI</div>
+        <div class="btns">
+          <a class="btn telegram" id="visitBtn2" href="https://t.me/M31_ROJI" target="_blank" rel="noopener">زورني على تلغرام</a>
+          <button class="btn secondary" id="copyBtn2">نسخ الاسم</button>
+        </div>
+      </div>
+
+      <p class="footer">يمكنك تعديل الأسماء أو الألوان بسهولة داخل الملف.</p>
+    </main>
+
+    <script>
+      // نسخ إنستغرام
+      const copyBtn = document.getElementById('copyBtn');
+      const handleEl = document.getElementById('handle');
+      copyBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(handleEl.textContent.trim());
+          copyBtn.textContent = 'تم النسخ ✔';
+          setTimeout(() => (copyBtn.textContent = 'نسخ الاسم'), 1600);
+        } catch (e) {
+          alert('انسخ يدويًا: ' + handleEl.textContent.trim());
+        }
+      });
+      // نسخ تلغرام
+      const copyBtn2 = document.getElementById('copyBtn2');
+      const handleEl2 = document.getElementById('handle2');
+      copyBtn2.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(handleEl2.textContent.trim());
+          copyBtn2.textContent = 'تم النسخ ✔';
+          setTimeout(() => (copyBtn2.textContent = 'نسخ الاسم'), 1600);
+        } catch (e) {
+          alert('انسخ يدويًا: ' + handleEl2.textContent.trim());
+        }
+      });
+    </script>
+  </body>
+</html><!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تسجيل الدخول</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(135deg,#000000,#1a0000,#000000);
+      margin: 0;
+    }
+    .login-container {
+      background: #111;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(255,0,0,0.25);
+      width: 300px;
+      text-align: center;
+      border: 1px solid #330000;
+    }
+    h2 {
+      margin-bottom: 1rem;
+      font-weight: 600;
+      color: #ff3333;
+      font-size: 18px;
+    }
+    .input-group {
+      position: relative;
+      margin-bottom: 0.8rem;
+    }
+    .input-group input {
+      width: 100%;
+      height: 34px;
+      padding: 5px 32px 5px 8px;
+      border: 1px solid #333;
+      border-radius: 6px;
+      outline: none;
+      background: #1c1c1c;
+      color: #fff;
+      font-size: 13px;
+      box-sizing: border-box;
+    }
+    .input-group input:focus {
+      border-color: #ff3333;
+      box-shadow: 0 0 5px rgba(255,0,0,0.4);
+    }
+    .input-group i {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #888;
+      font-size: 13px;
+      pointer-events: none;
+    }
+    .btn {
+      width: 100%;
+      padding: 9px;
+      background: #cc0000;
+      border: none;
+      border-radius: 6px;
+      color: #fff;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .btn:hover {
+      background: #ff0000;
+      box-shadow: 0 0 8px rgba(255,0,0,0.4);
+    }
+    .error-message {
+      margin-top: 8px;
+      color: #ff5555;
+      font-size: 12px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>موقع M31
+تسجيل الدخول</h2>
+    <form onsubmit="return login(event)">
+      <div class="input-group">
+        <input type="text" id="username" placeholder="اسم المستخدم" required>
+        <i class="fa fa-user"></i>
+      </div>
+      <div class="input-group">
+        <input type="password" id="password" placeholder="كلمة المرور" required>
+        <i class="fa fa-lock"></i>
+      </div>
+      <button type="submit" class="btn">
+        دخول <i class="fa fa-arrow-right"></i>
+      </button>
+      <div id="error" class="error-message">❌ اسم المستخدم أو كلمة المرور غير صحيحة</div>
+    </form>
+  </div>
+
+  <script>
+    function login(e) {
+      e.preventDefault();
+      const user = document.getElementById("username").value.trim();
+      const pass = document.getElementById("password").value.trim();
+      const errorBox = document.getElementById("error");
+
+      if (user === "M31" && pass === "M31") {
+        window.location.href = "player.html";
+      } else {
+        errorBox.style.display = "block";
+      }
+    }
+
+    // إخفاء رسالة الخطأ عند التعديل على أي حقل
+    document.querySelectorAll("#username, #password").forEach(input => {
+      input.addEventListener("input", () => {
+        document.getElementById("error").style.display = "none";
+      });
+    });
+  </script>
+</body>
+</html>
