@@ -270,3 +270,68 @@
     </script>
   </body>
 </html>
+<!-- مثال: ضع هذا داخل <body> حيث تريد الشعار -->
+<!-- 1) العنصر الذي يمثل الشعار -->
+<div id="logo" class="site-logo" title="علم الجزائر" aria-label="علم الجزائر"></div>
+
+<!-- 2) كود CSS ليعرض الشعار بحجم قابل للتحكم -->
+<style>
+  /* حجم الشعار العام — غيّره حسب الحاجة */
+  .site-logo {
+    width: 80px;        /* حجم الشعار العرضي */
+    height: 60px;       /* حجم الشعار الارتفاعي */
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 0;     /* لإزالة المسافات الداخلية مع svg */
+    overflow: hidden;
+  }
+
+  /* لو تريد الشعار أصغر/أكبر على شاشات مختلفة */
+  @media (max-width: 480px) {
+    .site-logo { width: 56px; height: 42px; }
+  }
+
+  /* إذا تريد وضعه في يمين الأعلى (مثال) */
+  .logo-top-right {
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    z-index: 9999;
+  }
+</style>
+
+<!-- 3) SVG مضمّن داخل عنصر الشعار (آمن وبدون صور خارجية) -->
+<!-- يمكنك ببساطة وضع الـ SVG داخل الـ div#logo كما في الأسفل -->
+<script>
+  // هذه دالة تُدرج علم الجزائر بصيغة SVG داخل عنصر الشعار
+  (function insertAlgeriaFlag() {
+    const svg = `
+    <svg viewBox="0 0 512 341" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="false" focusable="false">
+      <!-- خلفية: نصف أخضر (يسار) ونصف أبيض (يمين) -->
+      <rect width="512" height="341" fill="#006233"/>
+      <rect x="256" width="256" height="341" fill="#ffffff"/>
+
+      <!-- هلال أحمر (مُصنع بقرصين لإعطاء شكل الهلال) -->
+      <g transform="translate(0,0)">
+        <circle cx="272" cy="170.5" r="80" fill="#d21034"/>
+        <circle cx="300" cy="170.5" r="58" fill="#ffffff"/>
+      </g>
+
+      <!-- نجمة حمراء خماسية -->
+      <g transform="translate(0,0)">
+        <!-- نجمة بخمس نقاط، تم ضبط إحداثياتها لتكون بجانب الهلال -->
+        <polygon points="296,127 308,157 340,157 314,176 325,206 296,188 267,206 278,176 252,157 284,157"
+                 fill="#d21034"/>
+      </g>
+    </svg>
+    `;
+    const logoEl = document.getElementById('logo') || document.querySelector('.site-logo');
+    if (logoEl) {
+      logoEl.innerHTML = svg;
+      // يجعل الـ SVG يتوافق مع أبعاد العنصر (يحافظ على النسبة)
+      logoEl.querySelector('svg').style.width = '100%';
+      logoEl.querySelector('svg').style.height = '100%';
+      logoEl.querySelector('svg').setAttribute('preserveAspectRatio', 'xMidYMid meet');
+    }
+  })();
+</script>
